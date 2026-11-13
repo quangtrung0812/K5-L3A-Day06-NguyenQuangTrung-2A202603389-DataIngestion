@@ -1,0 +1,316 @@
+{
+  "benchmark_name": "NIST AI RMF 1.0 & CSF 2.0 Retrieval Benchmark",
+  "selection_criteria_locked_before_test": {
+    "primary_metric": "Dev Evidence Hit@3 (higher is better)",
+    "tie_breaker_1": "Dev Hit@1 (higher is better)",
+    "tie_breaker_2": "Manual Chunk Coherence score /2 on 10 pre-selected source positions and Filter Compliance rate on filtered queries",
+    "tie_breaker_3": "Ingestion cost & latency / chunk count efficiency",
+    "holdout_policy": "Strategy parameters and final strategy choice are locked using Dev split (15 questions) and manual coherence/metadata checks before evaluating the 5 holdout Test questions."
+  },
+  "query_telemetry": {
+    "total_questions": 20,
+    "query_prompt_tokens": 546,
+    "query_embedding_time_sec": 1.8067,
+    "query_embedding_cost_usd": 1.092e-05,
+    "db_search_time_sec_per_strategy": {
+      "A": 1.1974,
+      "B": 1.0831,
+      "C": 1.1924
+    }
+  },
+  "metrics_by_strategy": {
+    "A": {
+      "dev": {
+        "count": 15,
+        "hit_at_1": {
+          "hits": 5,
+          "total": 15,
+          "fraction": "5/15",
+          "rate_pct": 33.3
+        },
+        "evidence_hit_at_3": {
+          "hits": 7,
+          "total": 15,
+          "fraction": "7/15",
+          "rate_pct": 46.7
+        },
+        "diagnostics": {
+          "page_hit_at_1_fraction": "13/15",
+          "page_hit_at_3_fraction": "15/15",
+          "multi_chunk_combined_hit_at_3_fraction": "7/15",
+          "split_evidence_error_count": 8,
+          "split_evidence_question_ids": [
+            "q01",
+            "q03",
+            "q04",
+            "q05",
+            "q08",
+            "q10",
+            "q11",
+            "q13"
+          ]
+        },
+        "filter_compliance": {
+          "compliant_queries": 3,
+          "filtered_queries_total": 4,
+          "fraction": "3/4",
+          "rate_pct": 75.0
+        }
+      },
+      "test": {
+        "count": 5,
+        "hit_at_1": {
+          "hits": 2,
+          "total": 5,
+          "fraction": "2/5",
+          "rate_pct": 40.0
+        },
+        "evidence_hit_at_3": {
+          "hits": 3,
+          "total": 5,
+          "fraction": "3/5",
+          "rate_pct": 60.0
+        },
+        "diagnostics": {
+          "page_hit_at_1_fraction": "5/5",
+          "page_hit_at_3_fraction": "5/5",
+          "multi_chunk_combined_hit_at_3_fraction": "3/5",
+          "split_evidence_error_count": 2,
+          "split_evidence_question_ids": [
+            "q16",
+            "q19"
+          ]
+        },
+        "filter_compliance": {
+          "compliant_queries": 2,
+          "filtered_queries_total": 2,
+          "fraction": "2/2",
+          "rate_pct": 100.0
+        }
+      },
+      "all": {
+        "count": 20,
+        "hit_at_1": {
+          "hits": 7,
+          "total": 20,
+          "fraction": "7/20",
+          "rate_pct": 35.0
+        },
+        "evidence_hit_at_3": {
+          "hits": 10,
+          "total": 20,
+          "fraction": "10/20",
+          "rate_pct": 50.0
+        },
+        "diagnostics": {
+          "page_hit_at_1_fraction": "18/20",
+          "page_hit_at_3_fraction": "20/20",
+          "multi_chunk_combined_hit_at_3_fraction": "10/20",
+          "split_evidence_error_count": 10,
+          "split_evidence_question_ids": [
+            "q01",
+            "q03",
+            "q04",
+            "q05",
+            "q08",
+            "q10",
+            "q11",
+            "q13",
+            "q16",
+            "q19"
+          ]
+        },
+        "filter_compliance": {
+          "compliant_queries": 5,
+          "filtered_queries_total": 6,
+          "fraction": "5/6",
+          "rate_pct": 83.3
+        }
+      }
+    },
+    "B": {
+      "dev": {
+        "count": 15,
+        "hit_at_1": {
+          "hits": 12,
+          "total": 15,
+          "fraction": "12/15",
+          "rate_pct": 80.0
+        },
+        "evidence_hit_at_3": {
+          "hits": 13,
+          "total": 15,
+          "fraction": "13/15",
+          "rate_pct": 86.7
+        },
+        "diagnostics": {
+          "page_hit_at_1_fraction": "14/15",
+          "page_hit_at_3_fraction": "15/15",
+          "multi_chunk_combined_hit_at_3_fraction": "13/15",
+          "split_evidence_error_count": 2,
+          "split_evidence_question_ids": [
+            "q08",
+            "q10"
+          ]
+        },
+        "filter_compliance": {
+          "compliant_queries": 3,
+          "filtered_queries_total": 4,
+          "fraction": "3/4",
+          "rate_pct": 75.0
+        }
+      },
+      "test": {
+        "count": 5,
+        "hit_at_1": {
+          "hits": 1,
+          "total": 5,
+          "fraction": "1/5",
+          "rate_pct": 20.0
+        },
+        "evidence_hit_at_3": {
+          "hits": 4,
+          "total": 5,
+          "fraction": "4/5",
+          "rate_pct": 80.0
+        },
+        "diagnostics": {
+          "page_hit_at_1_fraction": "2/5",
+          "page_hit_at_3_fraction": "4/5",
+          "multi_chunk_combined_hit_at_3_fraction": "4/5",
+          "split_evidence_error_count": 0,
+          "split_evidence_question_ids": []
+        },
+        "filter_compliance": {
+          "compliant_queries": 2,
+          "filtered_queries_total": 2,
+          "fraction": "2/2",
+          "rate_pct": 100.0
+        }
+      },
+      "all": {
+        "count": 20,
+        "hit_at_1": {
+          "hits": 13,
+          "total": 20,
+          "fraction": "13/20",
+          "rate_pct": 65.0
+        },
+        "evidence_hit_at_3": {
+          "hits": 17,
+          "total": 20,
+          "fraction": "17/20",
+          "rate_pct": 85.0
+        },
+        "diagnostics": {
+          "page_hit_at_1_fraction": "16/20",
+          "page_hit_at_3_fraction": "19/20",
+          "multi_chunk_combined_hit_at_3_fraction": "17/20",
+          "split_evidence_error_count": 2,
+          "split_evidence_question_ids": [
+            "q08",
+            "q10"
+          ]
+        },
+        "filter_compliance": {
+          "compliant_queries": 5,
+          "filtered_queries_total": 6,
+          "fraction": "5/6",
+          "rate_pct": 83.3
+        }
+      }
+    },
+    "C": {
+      "dev": {
+        "count": 15,
+        "hit_at_1": {
+          "hits": 12,
+          "total": 15,
+          "fraction": "12/15",
+          "rate_pct": 80.0
+        },
+        "evidence_hit_at_3": {
+          "hits": 13,
+          "total": 15,
+          "fraction": "13/15",
+          "rate_pct": 86.7
+        },
+        "diagnostics": {
+          "page_hit_at_1_fraction": "14/15",
+          "page_hit_at_3_fraction": "15/15",
+          "multi_chunk_combined_hit_at_3_fraction": "13/15",
+          "split_evidence_error_count": 2,
+          "split_evidence_question_ids": [
+            "q08",
+            "q10"
+          ]
+        },
+        "filter_compliance": {
+          "compliant_queries": 4,
+          "filtered_queries_total": 4,
+          "fraction": "4/4",
+          "rate_pct": 100.0
+        }
+      },
+      "test": {
+        "count": 5,
+        "hit_at_1": {
+          "hits": 1,
+          "total": 5,
+          "fraction": "1/5",
+          "rate_pct": 20.0
+        },
+        "evidence_hit_at_3": {
+          "hits": 4,
+          "total": 5,
+          "fraction": "4/5",
+          "rate_pct": 80.0
+        },
+        "diagnostics": {
+          "page_hit_at_1_fraction": "2/5",
+          "page_hit_at_3_fraction": "4/5",
+          "multi_chunk_combined_hit_at_3_fraction": "4/5",
+          "split_evidence_error_count": 0,
+          "split_evidence_question_ids": []
+        },
+        "filter_compliance": {
+          "compliant_queries": 2,
+          "filtered_queries_total": 2,
+          "fraction": "2/2",
+          "rate_pct": 100.0
+        }
+      },
+      "all": {
+        "count": 20,
+        "hit_at_1": {
+          "hits": 13,
+          "total": 20,
+          "fraction": "13/20",
+          "rate_pct": 65.0
+        },
+        "evidence_hit_at_3": {
+          "hits": 17,
+          "total": 20,
+          "fraction": "17/20",
+          "rate_pct": 85.0
+        },
+        "diagnostics": {
+          "page_hit_at_1_fraction": "16/20",
+          "page_hit_at_3_fraction": "19/20",
+          "multi_chunk_combined_hit_at_3_fraction": "17/20",
+          "split_evidence_error_count": 2,
+          "split_evidence_question_ids": [
+            "q08",
+            "q10"
+          ]
+        },
+        "filter_compliance": {
+          "compliant_queries": 6,
+          "filtered_queries_total": 6,
+          "fraction": "6/6",
+          "rate_pct": 100.0
+        }
+      }
+    }
+  }
+}
