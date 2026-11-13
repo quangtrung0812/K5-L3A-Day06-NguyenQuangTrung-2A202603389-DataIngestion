@@ -1,0 +1,155 @@
+{
+  "timestamp": "2026-11-13T17:48:00+07:00",
+  "embedding_model": {
+    "provider": "OpenAI",
+    "model_name": "text-embedding-3-small",
+    "dimensions": 1536,
+    "price_per_1m_tokens_usd": 0.02,
+    "query_document_handling": "Symmetric dense embeddings via OpenAI /v1/embeddings (text-embedding-3-small, 1536d) normalized to unit length for cosine distance."
+  },
+  "vector_store": {
+    "backend": "PostgreSQL + pgvector",
+    "postgres_version": "16.16 (Debian 16.16-1.pgdg12+1)",
+    "pgvector_version": "0.8.7",
+    "table_name": "document_chunks",
+    "metric": "cosine (<=> operator in pgvector, score = 1 - cosine_distance)",
+    "search_mode": "Exact search (sequential scan over vector(1536) with SQL WHERE pre-filtering on indexed metadata columns)",
+    "persistence": "Docker volume day6_student_starter_pg_data mounted at /var/lib/postgresql/data"
+  },
+  "strategies": {
+    "A": {
+      "chunking": "fixed_size (size=500, overlap=50)",
+      "filter_enabled": false,
+      "chunk_count": 383,
+      "total_characters": 177685,
+      "prompt_tokens_billed": 33145,
+      "embedding_api_time_sec": 8.673,
+      "db_upsert_time_sec": 1.263,
+      "total_ingest_time_sec": 11.596,
+      "cost_usd": 0.000663
+    },
+    "B": {
+      "chunking": "by_paragraph (max_size=900)",
+      "filter_enabled": false,
+      "chunk_count": 247,
+      "total_characters": 161617,
+      "prompt_tokens_billed": 29915,
+      "embedding_api_time_sec": 4.35,
+      "db_upsert_time_sec": 0.683,
+      "total_ingest_time_sec": 6.681,
+      "cost_usd": 0.000598
+    },
+    "C": {
+      "chunking": "by_paragraph (max_size=900)",
+      "filter_enabled": true,
+      "filter_fields": [
+        "domain",
+        "year",
+        "section"
+      ],
+      "chunk_count": 247,
+      "total_characters": 161617,
+      "prompt_tokens_billed_if_standalone": 29915,
+      "prompt_tokens_billed_reused_from_B": 0,
+      "embedding_api_time_sec_if_standalone": 4.35,
+      "db_upsert_time_sec": 0.687,
+      "total_ingest_time_sec_if_standalone": 6.685,
+      "cost_usd_if_standalone": 0.000598,
+      "cost_usd_reused_from_B": 0.0
+    }
+  },
+  "idempotency_and_reingestion_check": {
+    "counts_after_first_ingest": {
+      "A": 383,
+      "B": 247,
+      "C": 247
+    },
+    "counts_after_second_ingest_same_version": {
+      "A": 383,
+      "B": 247,
+      "C": 247
+    },
+    "zero_duplicates_verified": true,
+    "obsolete_chunk_cleanup_test": {
+      "count_with_dummy_obsolete_chunk": 248,
+      "count_after_reingest_cleanup": 247,
+      "cleanup_verified": true
+    }
+  },
+  "smoke_test_top3": {
+    "query": "Within the AI risk management domain (2023 framework), what contingency and third-party governance requirements are specified under GOVERN 6?",
+    "filter_for_C": {
+      "domain": "ai_risk",
+      "year": 2023
+    },
+    "A_top3": [
+      {
+        "chunk_id": "nist-ai-rmf-1.0:p29:fixed:003",
+        "page": 29,
+        "score": 0.70156,
+        "domain": "ai_risk",
+        "year": 2023
+      },
+      {
+        "chunk_id": "nist-ai-rmf-1.0:p27:fixed:005",
+        "page": 27,
+        "score": 0.669369,
+        "domain": "ai_risk",
+        "year": 2023
+      },
+      {
+        "chunk_id": "nist-ai-rmf-1.0:p27:fixed:001",
+        "page": 27,
+        "score": 0.658897,
+        "domain": "ai_risk",
+        "year": 2023
+      }
+    ],
+    "B_top3": [
+      {
+        "chunk_id": "nist-ai-rmf-1.0:p29:para:002",
+        "page": 29,
+        "score": 0.692457,
+        "domain": "ai_risk",
+        "year": 2023
+      },
+      {
+        "chunk_id": "nist-ai-rmf-1.0:p28:para:001",
+        "page": 28,
+        "score": 0.672179,
+        "domain": "ai_risk",
+        "year": 2023
+      },
+      {
+        "chunk_id": "nist-ai-rmf-1.0:p27:para:003",
+        "page": 27,
+        "score": 0.659129,
+        "domain": "ai_risk",
+        "year": 2023
+      }
+    ],
+    "C_top3": [
+      {
+        "chunk_id": "nist-ai-rmf-1.0:p29:para:002",
+        "page": 29,
+        "score": 0.692457,
+        "domain": "ai_risk",
+        "year": 2023
+      },
+      {
+        "chunk_id": "nist-ai-rmf-1.0:p28:para:001",
+        "page": 28,
+        "score": 0.672179,
+        "domain": "ai_risk",
+        "year": 2023
+      },
+      {
+        "chunk_id": "nist-ai-rmf-1.0:p27:para:003",
+        "page": 27,
+        "score": 0.659129,
+        "domain": "ai_risk",
+        "year": 2023
+      }
+    ]
+  }
+}

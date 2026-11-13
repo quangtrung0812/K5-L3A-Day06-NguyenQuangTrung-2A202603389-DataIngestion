@@ -1,10 +1,14 @@
 __pycache__/
 .venv/
+**/.venv/
 .env
+**/.env
 *.pyc
 
 .env.*
+**/.env.*
 !.env.example
+!**/.env.example
 .DS_Store
 .pytest_cache/
 *.sqlite
