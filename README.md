@@ -97,8 +97,8 @@ Tất cả các lệnh dưới đây chạy từ thư mục gốc của reposito
 # 4. Tạo Embedding (OpenAI text-embedding-3-small) & nạp vào pgvector + kiểm tra Idempotency
 .\starter\.venv\Scripts\python.exe starter\scripts\run_cp4_indexing.py
 
-# 5. Chạy đánh giá Benchmark trên cả 3 chiến lược A, B, C (lưu top-3 traces & summary metrics)
-.\starter\.venv\Scripts\python.exe -m starter.src.run --skip-ingest
+# 5. Chạy đánh giá Benchmark trên cả 3 chiến lược A, B, C (tự động bỏ qua nạp lại nếu pgvector đã đủ chunk, lưu top-3 traces & summary metrics)
+.\starter\.venv\Scripts\python.exe -m starter.src.run
 
 # 6. Sinh báo cáo Audit thủ công (Coherence n=10/chiến lược, Metadata n=15, Grounding n=5)
 .\starter\.venv\Scripts\python.exe starter\scripts\generate_cp5_audit_artifacts.py
