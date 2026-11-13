@@ -1,0 +1,300 @@
+{
+  "dimension": "2. Chunk Coherence",
+  "grader": "Author (manual inspection prior to test tuning; potential self-grading bias noted)",
+  "sample_size_per_strategy": 10,
+  "sampling_methodology": "Pre-selected the first 10 sorted valid page_ids (nist-ai-rmf-1.0:p06 to nist-ai-rmf-1.0:p15) and audited the second chunk on each page (first internal boundary).",
+  "summary_by_strategy": {
+    "A": {
+      "n": 10,
+      "score_counts": {
+        "0": 2,
+        "1": 8,
+        "2": 0
+      },
+      "total_points": "8/20",
+      "mean_score_out_of_2": 0.8
+    },
+    "B": {
+      "n": 10,
+      "score_counts": {
+        "0": 0,
+        "1": 1,
+        "2": 9
+      },
+      "total_points": "19/20",
+      "mean_score_out_of_2": 1.9
+    },
+    "C": {
+      "n": 10,
+      "score_counts": {
+        "0": 0,
+        "1": 1,
+        "2": 9
+      },
+      "total_points": "19/20",
+      "mean_score_out_of_2": 1.9
+    }
+  },
+  "samples": [
+    {
+      "sample_index": 1,
+      "source_position_id": "nist-ai-rmf-1.0:p06",
+      "selection_rule": "First 10 sorted valid page_ids in corpus, evaluating the 2nd chunk (first internal chunk boundary) on each page.",
+      "strategy_A": {
+        "chunk_id": "nist-ai-rmf-1.0:p06:fixed:002",
+        "char_length": 500,
+        "score_0_to_2": 1,
+        "reason": "Starts mid-word ('izations, communities...') and ends mid-word ('...AI s'), truncating the autonomy clause of the AI system definition.",
+        "text": "izations, communities, society, the environment, and the planet. Like risks for other types of technology, AI risks can emerge in a variety of ways and can be characterized as long- or short-term, highor low-probability, systemic or localized, and high- or low-impact.\n\nThe AI RMF refers to an AI system as an engineered or machine-based system that can, for a given set of objectives, generate outputs such as predictions, recommendations, or decisions influencing real or virtual environments. AI s"
+      },
+      "strategy_B": {
+        "chunk_id": "nist-ai-rmf-1.0:p06:para:002",
+        "char_length": 361,
+        "score_0_to_2": 2,
+        "reason": "Contains the complete, self-contained paragraph defining an AI system and its varying levels of autonomy per OECD/ISO.",
+        "text": "The AI RMF refers to an AI system as an engineered or machine-based system that can, for a given set of objectives, generate outputs such as predictions, recommendations, or decisions influencing real or virtual environments. AI systems are designed to operate with varying levels of autonomy (Adapted from: OECD Recommendation on AI:2019; ISO /IEC 22989:2022)."
+      },
+      "strategy_C": {
+        "chunk_id": "nist-ai-rmf-1.0:p06:para:002",
+        "char_length": 361,
+        "score_0_to_2": 2,
+        "reason": "Contains the complete, self-contained paragraph defining an AI system and its varying levels of autonomy per OECD/ISO. (Identical chunking to Strategy B).",
+        "text": "The AI RMF refers to an AI system as an engineered or machine-based system that can, for a given set of objectives, generate outputs such as predictions, recommendations, or decisions influencing real or virtual environments. AI systems are designed to operate with varying levels of autonomy (Adapted from: OECD Recommendation on AI:2019; ISO /IEC 22989:2022)."
+      }
+    },
+    {
+      "sample_index": 2,
+      "source_position_id": "nist-ai-rmf-1.0:p07",
+      "selection_rule": "First 10 sorted valid page_ids in corpus, evaluating the 2nd chunk (first internal chunk boundary) on each page.",
+      "strategy_A": {
+        "chunk_id": "nist-ai-rmf-1.0:p07:fixed:002",
+        "char_length": 499,
+        "score_0_to_2": 1,
+        "reason": "Starts with a broken citation fragment ('/IEC TR 24368:2022).') before stating the ISO definition of professional responsibility.",
+        "text": "/IEC TR 24368:2022). Responsible AI is meant to result in technology that is also equitable and accountable. The expectation is that organizational practices are carried out in accord with “professional responsibility,” defined by ISO as an approach that “aims to ensure that professionals who design, develop, or deploy AI systems and applications or AI-based products or systems, recognize their unique position to exert influence on people, society, and the future of AI” (ISO /IEC TR 24368:2022)"
+      },
+      "strategy_B": {
+        "chunk_id": "nist-ai-rmf-1.0:p07:para:002",
+        "char_length": 391,
+        "score_0_to_2": 2,
+        "reason": "Preserves the complete, self-contained paragraph defining organizational practices and professional responsibility.",
+        "text": "The expectation is that organizational practices are carried out in accord with “professional responsibility,” defined by ISO as an approach that “aims to ensure that professionals who design, develop, or deploy AI systems and applications or AI-based products or systems, recognize their unique position to exert influence on people, society, and the future of AI” (ISO /IEC TR 24368:2022)."
+      },
+      "strategy_C": {
+        "chunk_id": "nist-ai-rmf-1.0:p07:para:002",
+        "char_length": 391,
+        "score_0_to_2": 2,
+        "reason": "Preserves the complete, self-contained paragraph defining organizational practices and professional responsibility. (Identical chunking to Strategy B).",
+        "text": "The expectation is that organizational practices are carried out in accord with “professional responsibility,” defined by ISO as an approach that “aims to ensure that professionals who design, develop, or deploy AI systems and applications or AI-based products or systems, recognize their unique position to exert influence on people, society, and the future of AI” (ISO /IEC TR 24368:2022)."
+      }
+    },
+    {
+      "sample_index": 3,
+      "source_position_id": "nist-ai-rmf-1.0:p08",
+      "selection_rule": "First 10 sorted valid page_ids in corpus, evaluating the 2nd chunk (first internal chunk boundary) on each page.",
+      "strategy_A": {
+        "chunk_id": "nist-ai-rmf-1.0:p08:fixed:002",
+        "char_length": 500,
+        "score_0_to_2": 1,
+        "reason": "Starts mid-word ('plies to all stages...' missing subject 'GOVERN') and cuts off mid-predicate at the end ('...is directed').",
+        "text": "plies to all stages of organizations’ AI risk management processes and procedures, the MAP, MEASURE , and MANAGE functions can be applied in AI system-specific contexts and at specific stages of the AI lifecycle.\n\nAdditional resources related to the Framework are included in the AI RMF Playbook, which is available via the NIST AI RMF website:\n\nhttps://www.nist.gov/itl/ai-risk-management-framework.\n\nDevelopment of the AI RMF by NIST in collaboration with the private and public sectors is directed"
+      },
+      "strategy_B": {
+        "chunk_id": "nist-ai-rmf-1.0:p08:para:002",
+        "char_length": 782,
+        "score_0_to_2": 2,
+        "reason": "Preserves the complete paragraph describing NIST's collaborative development of AI RMF 1.0 with public and private sectors.",
+        "text": "Development of the AI RMF by NIST in collaboration with the private and public sectors is directed and consistent with its broader AI efforts called for by the National AI Initiative Act of 2020, the National Security Commission on Artificial Intelligence recommendations, and the Plan for Federal Engagement in Developing Technical Standards and Related Tools. Engagement with the AI community during this Framework’s development – via responses to a formal Request for Information, three widely attended workshops, public comments on a concept paper and two drafts of the Framework, discussions at multiple public forums, and many small group meetings – has informed development of the AI RMF 1.0 as well as AI research and development and evaluation conducted by NIST and others."
+      },
+      "strategy_C": {
+        "chunk_id": "nist-ai-rmf-1.0:p08:para:002",
+        "char_length": 782,
+        "score_0_to_2": 2,
+        "reason": "Preserves the complete paragraph describing NIST's collaborative development of AI RMF 1.0 with public and private sectors. (Identical chunking to Strategy B).",
+        "text": "Development of the AI RMF by NIST in collaboration with the private and public sectors is directed and consistent with its broader AI efforts called for by the National AI Initiative Act of 2020, the National Security Commission on Artificial Intelligence recommendations, and the Plan for Federal Engagement in Developing Technical Standards and Related Tools. Engagement with the AI community during this Framework’s development – via responses to a formal Request for Information, three widely attended workshops, public comments on a concept paper and two drafts of the Framework, discussions at multiple public forums, and many small group meetings – has informed development of the AI RMF 1.0 as well as AI research and development and evaluation conducted by NIST and others."
+      }
+    },
+    {
+      "sample_index": 4,
+      "source_position_id": "nist-ai-rmf-1.0:p09",
+      "selection_rule": "First 10 sorted valid page_ids in corpus, evaluating the 2nd chunk (first internal chunk boundary) on each page.",
+      "strategy_A": {
+        "chunk_id": "nist-ai-rmf-1.0:p09:fixed:002",
+        "char_length": 500,
+        "score_0_to_2": 1,
+        "reason": "Starts mid-word ('ext of the AI RMF...') and cuts off mid-word ('...event oc') right before the second factor of the risk equation (likelihood of occurrence).",
+        "text": "ext of the AI RMF,risk refers to the composite measure of an event’s probability of occurring and the magnitude or degree of the consequences of the corresponding event.\n\nThe impacts, or consequences, of AI systems can be positive, negative, or both and can result in opportunities or threats (Adapted from: ISO 31000:2018). When considering the negative impact of a potential event, risk is a function of 1) the negative impact, or magnitude of harm, that would arise if the circumstance or event oc"
+      },
+      "strategy_B": {
+        "chunk_id": "nist-ai-rmf-1.0:p09:para:002",
+        "char_length": 683,
+        "score_0_to_2": 2,
+        "reason": "Preserves the entire risk definition paragraph (both magnitude of harm and likelihood of occurrence) plus the ISO 31000 risk management definition.",
+        "text": "The impacts, or consequences, of AI systems can be positive, negative, or both and can result in opportunities or threats (Adapted from: ISO 31000:2018). When considering the negative impact of a potential event, risk is a function of 1) the negative impact, or magnitude of harm, that would arise if the circumstance or event occurs and 2) the likelihood of occurrence (Adapted from: OMB Circular A-130:2016). Negative impact or harm can be experienced by individuals, groups, communities, organizations, society, the environment, and the planet.\n\n“Risk management refers to coordinated activities to direct and control an organization with regard to risk” (Source: ISO 31000:2018)."
+      },
+      "strategy_C": {
+        "chunk_id": "nist-ai-rmf-1.0:p09:para:002",
+        "char_length": 683,
+        "score_0_to_2": 2,
+        "reason": "Preserves the entire risk definition paragraph (both magnitude of harm and likelihood of occurrence) plus the ISO 31000 risk management definition. (Identical chunking to Strategy B).",
+        "text": "The impacts, or consequences, of AI systems can be positive, negative, or both and can result in opportunities or threats (Adapted from: ISO 31000:2018). When considering the negative impact of a potential event, risk is a function of 1) the negative impact, or magnitude of harm, that would arise if the circumstance or event occurs and 2) the likelihood of occurrence (Adapted from: OMB Circular A-130:2016). Negative impact or harm can be experienced by individuals, groups, communities, organizations, society, the environment, and the planet.\n\n“Risk management refers to coordinated activities to direct and control an organization with regard to risk” (Source: ISO 31000:2018)."
+      }
+    },
+    {
+      "sample_index": 5,
+      "source_position_id": "nist-ai-rmf-1.0:p10",
+      "selection_rule": "First 10 sorted valid page_ids in corpus, evaluating the 2nd chunk (first internal chunk boundary) on each page.",
+      "strategy_A": {
+        "chunk_id": "nist-ai-rmf-1.0:p10:fixed:002",
+        "char_length": 500,
+        "score_0_to_2": 1,
+        "reason": "Starts mid-word ('quately understood...') and cuts off mid-word ('...third-party data, so'), losing the explanation of metric misalignment.",
+        "text": "quately understood are difficult to measure quantitatively or qualitatively. The inability to appropriately measure AI risks does not imply that an AI system necessarily poses either a high or low risk. Some risk measurement challenges include:\n\nRisks related to third-party software, hardware, and data: Third-party data or systems can accelerate research and development and facilitate technology transition. They also may complicate risk measurement. Risk can emerge both from third-party data, so"
+      },
+      "strategy_B": {
+        "chunk_id": "nist-ai-rmf-1.0:p10:para:002",
+        "char_length": 843,
+        "score_0_to_2": 2,
+        "reason": "Preserves the full paragraph on third-party software, hardware, and data risk measurement challenges and ends cleanly at a sentence boundary.",
+        "text": "Risks related to third-party software, hardware, and data: Third-party data or systems can accelerate research and development and facilitate technology transition. They also may complicate risk measurement. Risk can emerge both from third-party data, software or hardware itself and how it is used. Risk metrics or methodologies used by the organization developing the AI system may not align with the risk metrics or methodologies uses by the organization deploying or operating the system. Also, the organization developing the AI system may not be transparent about the risk metrics or methodologies it used. Risk measurement and management can be complicated by how customers use or integrate thirdparty data or systems into AI products or services, particularly without sufficient internal governance structures and technical safeguards."
+      },
+      "strategy_C": {
+        "chunk_id": "nist-ai-rmf-1.0:p10:para:002",
+        "char_length": 843,
+        "score_0_to_2": 2,
+        "reason": "Preserves the full paragraph on third-party software, hardware, and data risk measurement challenges and ends cleanly at a sentence boundary. (Identical chunking to Strategy B).",
+        "text": "Risks related to third-party software, hardware, and data: Third-party data or systems can accelerate research and development and facilitate technology transition. They also may complicate risk measurement. Risk can emerge both from third-party data, software or hardware itself and how it is used. Risk metrics or methodologies used by the organization developing the AI system may not align with the risk metrics or methodologies uses by the organization deploying or operating the system. Also, the organization developing the AI system may not be transparent about the risk metrics or methodologies it used. Risk measurement and management can be complicated by how customers use or integrate thirdparty data or systems into AI products or services, particularly without sufficient internal governance structures and technical safeguards."
+      }
+    },
+    {
+      "sample_index": 6,
+      "source_position_id": "nist-ai-rmf-1.0:p11",
+      "selection_rule": "First 10 sorted valid page_ids in corpus, evaluating the 2nd chunk (first internal chunk boundary) on each page.",
+      "strategy_A": {
+        "chunk_id": "nist-ai-rmf-1.0:p11:fixed:002",
+        "char_length": 500,
+        "score_0_to_2": 1,
+        "reason": "Starts mid-clause ('metrics is often an institutional endeavor...' missing 'development of') and ends mid-word ('...communities or o').",
+        "text": "metrics is often an institutional endeavor and may inadvertently reflect factors unrelated to the underlying impact. In addition, measurement approaches can be oversimplified, gamed, lack critical nuance, become relied upon in unexpected ways, or fail to account for differences in affected groups and contexts.\n\nApproaches for measuring impacts on a population work best if they recognize that contexts matter, that harms may affect varied groups or sub-groups differently, and that communities or o"
+      },
+      "strategy_B": {
+        "chunk_id": "nist-ai-rmf-1.0:p11:para:002",
+        "char_length": 623,
+        "score_0_to_2": 2,
+        "reason": "Contains two complete, coherent paragraphs on population impact measurement and risk perspectives across AI lifecycle stages.",
+        "text": "Approaches for measuring impacts on a population work best if they recognize that contexts matter, that harms may affect varied groups or sub-groups differently, and that communities or other sub-groups who may be harmed are not always direct users of a system.\n\nRisk at different stages of the AI lifecycle: Measuring risk at an earlier stage in the AI lifecycle may yield different results than measuring risk at a later stage; some risks may be latent at a given point in time and may increase as AI systems adapt and evolve. Furthermore, different AI actors across the AI lifecycle can have different risk perspectives."
+      },
+      "strategy_C": {
+        "chunk_id": "nist-ai-rmf-1.0:p11:para:002",
+        "char_length": 623,
+        "score_0_to_2": 2,
+        "reason": "Contains two complete, coherent paragraphs on population impact measurement and risk perspectives across AI lifecycle stages. (Identical chunking to Strategy B).",
+        "text": "Approaches for measuring impacts on a population work best if they recognize that contexts matter, that harms may affect varied groups or sub-groups differently, and that communities or other sub-groups who may be harmed are not always direct users of a system.\n\nRisk at different stages of the AI lifecycle: Measuring risk at an earlier stage in the AI lifecycle may yield different results than measuring risk at a later stage; some risks may be latent at a given point in time and may increase as AI systems adapt and evolve. Furthermore, different AI actors across the AI lifecycle can have different risk perspectives."
+      }
+    },
+    {
+      "sample_index": 7,
+      "source_position_id": "nist-ai-rmf-1.0:p12",
+      "selection_rule": "First 10 sorted valid page_ids in corpus, evaluating the 2nd chunk (first internal chunk boundary) on each page.",
+      "strategy_A": {
+        "chunk_id": "nist-ai-rmf-1.0:p12:fixed:002",
+        "char_length": 499,
+        "score_0_to_2": 1,
+        "reason": "Starts with a sentence fragment ('and application and use-case specific.' missing subject 'Risk tolerance') and ends mid-word ('...will contin').",
+        "text": "and application and use-case specific. Risk tolerances can be influenced by policies and norms established by AI system owners, organizations, industries, communities, or policy makers. Risk tolerances are likely to change over time as AI systems, policies, and norms evolve. Different organizations may have varied risk tolerances due to their particular organizational priorities and resource considerations.\n\nEmerging knowledge and methods to better inform harm/cost-benefit tradeoffs will contin"
+      },
+      "strategy_B": {
+        "chunk_id": "nist-ai-rmf-1.0:p12:para:002",
+        "char_length": 378,
+        "score_0_to_2": 2,
+        "reason": "Contains two complete paragraphs on harm/cost-benefit tradeoffs and contexts where risk tolerances remain unresolved.",
+        "text": "Emerging knowledge and methods to better inform harm/cost-benefit tradeoffs will continue to be developed and debated by businesses, governments, academia, and civil society.\n\nTo the extent that challenges for specifying AI risk tolerances remain unresolved, there may be contexts where a risk management framework is not yet readily applicable for mitigating negative AI risks."
+      },
+      "strategy_C": {
+        "chunk_id": "nist-ai-rmf-1.0:p12:para:002",
+        "char_length": 378,
+        "score_0_to_2": 2,
+        "reason": "Contains two complete paragraphs on harm/cost-benefit tradeoffs and contexts where risk tolerances remain unresolved. (Identical chunking to Strategy B).",
+        "text": "Emerging knowledge and methods to better inform harm/cost-benefit tradeoffs will continue to be developed and debated by businesses, governments, academia, and civil society.\n\nTo the extent that challenges for specifying AI risk tolerances remain unresolved, there may be contexts where a risk management framework is not yet readily applicable for mitigating negative AI risks."
+      }
+    },
+    {
+      "sample_index": 8,
+      "source_position_id": "nist-ai-rmf-1.0:p13",
+      "selection_rule": "First 10 sorted valid page_ids in corpus, evaluating the 2nd chunk (first internal chunk boundary) on each page.",
+      "strategy_A": {
+        "chunk_id": "nist-ai-rmf-1.0:p13:fixed:002",
+        "char_length": 500,
+        "score_0_to_2": 0,
+        "reason": "Severely broken at both ends: starts mid-word ('ease in a safe manner...') without the subject or unacceptable-risk condition, and ends mid-word ('...comprised of sensi').",
+        "text": "ease in a safe manner until risks can be sufficiently managed. If an AI system’s development, deployment, and use cases are found to be low-risk in a specific context, that may suggest potentially lower prioritization.\n\nRisk prioritization may differ between AI systems that are designed or deployed to directly interact with humans as compared to AI systems that are not. Higher initial prioritization may be called for in settings where the AI system is trained on large datasets comprised of sensi"
+      },
+      "strategy_B": {
+        "chunk_id": "nist-ai-rmf-1.0:p13:para:002",
+        "char_length": 810,
+        "score_0_to_2": 2,
+        "reason": "Preserves the complete paragraph comparing risk prioritization between human-facing AI systems and computational-only AI systems.",
+        "text": "Risk prioritization may differ between AI systems that are designed or deployed to directly interact with humans as compared to AI systems that are not. Higher initial prioritization may be called for in settings where the AI system is trained on large datasets comprised of sensitive or protected data such as personally identifiable information, or where the outputs of the AI systems have direct or indirect impact on humans. AI systems designed to interact only with computational systems and trained on non-sensitive datasets (for example, data collected from the physical environment) may call for lower initial prioritization. Nonetheless, regularly assessing and prioritizing risk based on context remains important because non-human-facing AI systems can have downstream safety or social implications."
+      },
+      "strategy_C": {
+        "chunk_id": "nist-ai-rmf-1.0:p13:para:002",
+        "char_length": 810,
+        "score_0_to_2": 2,
+        "reason": "Preserves the complete paragraph comparing risk prioritization between human-facing AI systems and computational-only AI systems. (Identical chunking to Strategy B).",
+        "text": "Risk prioritization may differ between AI systems that are designed or deployed to directly interact with humans as compared to AI systems that are not. Higher initial prioritization may be called for in settings where the AI system is trained on large datasets comprised of sensitive or protected data such as personally identifiable information, or where the outputs of the AI systems have direct or indirect impact on humans. AI systems designed to interact only with computational systems and trained on non-sensitive datasets (for example, data collected from the physical environment) may call for lower initial prioritization. Nonetheless, regularly assessing and prioritizing risk based on context remains important because non-human-facing AI systems can have downstream safety or social implications."
+      }
+    },
+    {
+      "sample_index": 9,
+      "source_position_id": "nist-ai-rmf-1.0:p14",
+      "selection_rule": "First 10 sorted valid page_ids in corpus, evaluating the 2nd chunk (first internal chunk boundary) on each page.",
+      "strategy_A": {
+        "chunk_id": "nist-ai-rmf-1.0:p14:fixed:002",
+        "char_length": 499,
+        "score_0_to_2": 1,
+        "reason": "Starts mid-sentence ('small to medium-sized organizations...') and cuts off mid-word ('...disciplinarily divers') in Section 2 Audience.",
+        "text": "small to medium-sized organizations managing AI risks or implementing the AI RMF may face different challenges than large organizations, depending on their capabilities and resources.\n\n2. Audience Identifying and managing AI risks and potential impacts – both positive and negative – requires a broad set of perspectives and actors across the AI lifecycle. Ideally, AI actors will represent a diversity of experience, expertise, and backgrounds and comprise demographically and disciplinarily divers"
+      },
+      "strategy_B": {
+        "chunk_id": "nist-ai-rmf-1.0:p14:para:002",
+        "char_length": 409,
+        "score_0_to_2": 2,
+        "reason": "Preserves the complete introductory paragraph of Section 2 (Audience) cleanly.",
+        "text": "2. Audience Identifying and managing AI risks and potential impacts – both positive and negative – requires a broad set of perspectives and actors across the AI lifecycle. Ideally, AI actors will represent a diversity of experience, expertise, and backgrounds and comprise demographically and disciplinarily diverse teams. The AI RMF is intended to be used by AI actors across the AI lifecycle and dimensions."
+      },
+      "strategy_C": {
+        "chunk_id": "nist-ai-rmf-1.0:p14:para:002",
+        "char_length": 409,
+        "score_0_to_2": 2,
+        "reason": "Preserves the complete introductory paragraph of Section 2 (Audience) cleanly. (Identical chunking to Strategy B).",
+        "text": "2. Audience Identifying and managing AI risks and potential impacts – both positive and negative – requires a broad set of perspectives and actors across the AI lifecycle. Ideally, AI actors will represent a diversity of experience, expertise, and backgrounds and comprise demographically and disciplinarily diverse teams. The AI RMF is intended to be used by AI actors across the AI lifecycle and dimensions."
+      }
+    },
+    {
+      "sample_index": 10,
+      "source_position_id": "nist-ai-rmf-1.0:p15",
+      "selection_rule": "First 10 sorted valid page_ids in corpus, evaluating the 2nd chunk (first internal chunk boundary) on each page.",
+      "strategy_A": {
+        "chunk_id": "nist-ai-rmf-1.0:p15:fixed:002",
+        "char_length": 499,
+        "score_0_to_2": 0,
+        "reason": "Starts with a detached fragment ('AI actors.\\n\\nenvironmental groups...') missing its subject/verb from the previous chunk, and cuts off the 4th bullet mid-word ('...related to civ').",
+        "text": "AI actors.\n\nenvironmental groups, civil society organizations, end users, and potentially impacted individuals and communities. These actors can:\n\n• assist in providing context and understanding potential and actual impacts;\n\n• be a source of formal or quasi-formal norms and guidance for AI risk management;\n\n• designate boundaries for AI operation (technical, societal, legal, and ethical); and\n\n• promote discussion of the tradeoffs needed to balance societal values and priorities related to civ"
+      },
+      "strategy_B": {
+        "chunk_id": "nist-ai-rmf-1.0:p15:para:002",
+        "char_length": 714,
+        "score_0_to_2": 1,
+        "reason": "Starts with the 4th bullet item ('• promote discussion of the tradeoffs...') detached from its lead-in header ('These actors can:') in para:001 due to the 900-char limit, followed by a complete paragraph.",
+        "text": "• promote discussion of the tradeoffs needed to balance societal values and priorities related to civil liberties and rights, equity, the environment and the planet, and the economy.\n\nSuccessful risk management depends upon a sense of collective responsibility among AI actors shown in Figure 3. The AI RMF functions, described in Section 5, require diverse perspectives, disciplines, professions, and experiences. Diverse teams contribute to more open sharing of ideas and assumptions about the purposes and functions of technology – making these implicit aspects more explicit. This broader collective perspective creates opportunities for surfacing problems and identifying existing and emergent risks.\n\nPage 10"
+      },
+      "strategy_C": {
+        "chunk_id": "nist-ai-rmf-1.0:p15:para:002",
+        "char_length": 714,
+        "score_0_to_2": 1,
+        "reason": "Starts with the 4th bullet item ('• promote discussion of the tradeoffs...') detached from its lead-in header ('These actors can:') in para:001 due to the 900-char limit, followed by a complete paragraph. (Identical chunking to Strategy B).",
+        "text": "• promote discussion of the tradeoffs needed to balance societal values and priorities related to civil liberties and rights, equity, the environment and the planet, and the economy.\n\nSuccessful risk management depends upon a sense of collective responsibility among AI actors shown in Figure 3. The AI RMF functions, described in Section 5, require diverse perspectives, disciplines, professions, and experiences. Diverse teams contribute to more open sharing of ideas and assumptions about the purposes and functions of technology – making these implicit aspects more explicit. This broader collective perspective creates opportunities for surfacing problems and identifying existing and emergent risks.\n\nPage 10"
+      }
+    }
+  ]
+}

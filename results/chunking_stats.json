@@ -1,0 +1,62 @@
+{
+  "corpus_valid_pages": 67,
+  "corpus_excluded_pages": 13,
+  "strategy_A_fixed_size": {
+    "parameters": {
+      "method": "fixed_size",
+      "size": 500,
+      "overlap": 50
+    },
+    "chunk_count": 383,
+    "total_characters": 177685,
+    "total_estimated_tokens": 44434,
+    "char_length_distribution": {
+      "min": 55,
+      "p25": 499,
+      "median": 500,
+      "mean": 463.9,
+      "p75": 500,
+      "p95": 500,
+      "max": 500,
+      "stdev": 96.5
+    },
+    "chunks_by_document": {
+      "nist-ai-rmf-1.0": 234,
+      "nist-csf-2.0": 149
+    },
+    "chunks_by_domain": {
+      "ai_risk": 234,
+      "cybersecurity": 149
+    },
+    "boundary_cut_count_BothEnds": 288
+  },
+  "strategy_B_by_paragraph": {
+    "parameters": {
+      "method": "by_paragraph",
+      "max_size": 900
+    },
+    "chunk_count": 247,
+    "total_characters": 161617,
+    "total_estimated_tokens": 40406,
+    "char_length_distribution": {
+      "min": 89,
+      "p25": 532,
+      "median": 718,
+      "mean": 654.3,
+      "p75": 821,
+      "p95": 887,
+      "max": 900,
+      "stdev": 204.8
+    },
+    "chunks_by_document": {
+      "nist-ai-rmf-1.0": 153,
+      "nist-csf-2.0": 94
+    },
+    "chunks_by_domain": {
+      "ai_risk": 153,
+      "cybersecurity": 94
+    },
+    "boundary_cut_count_BothEnds": 30
+  },
+  "strategy_C_note": "Strategy C uses the exact same chunks as Strategy B (by_paragraph, max_size=900) and adds metadata filtering at retrieval time."
+}
