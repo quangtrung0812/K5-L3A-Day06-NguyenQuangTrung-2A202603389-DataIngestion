@@ -1,0 +1,356 @@
+{
+  "status": "VERIFIED_OK",
+  "total_questions": 20,
+  "dev_count": 15,
+  "test_count": 5,
+  "filtered_total": 6,
+  "filtered_dev": 4,
+  "filtered_test": 2,
+  "dev_test_primary_page_overlap": 0,
+  "records": [
+    {
+      "id": "q01",
+      "split": "dev",
+      "type": "direct",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 6,
+      "gold_section": "executive_summary",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 292,
+      "alternative_gold_verified": [],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q02",
+      "split": "dev",
+      "type": "direct",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 17,
+      "gold_section": "part_1_trustworthiness_and_effectiveness",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 212,
+      "alternative_gold_verified": [
+        {
+          "source_id": "nist-ai-rmf-1.0",
+          "page": 8,
+          "verified": true
+        }
+      ],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q03",
+      "split": "dev",
+      "type": "paraphrase",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 11,
+      "gold_section": "part_1_framing_and_audience",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 230,
+      "alternative_gold_verified": [],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q04",
+      "split": "dev",
+      "type": "conditional_exception",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 13,
+      "gold_section": "part_1_framing_and_audience",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 300,
+      "alternative_gold_verified": [],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q05",
+      "split": "dev",
+      "type": "paraphrase",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 22,
+      "gold_section": "part_1_trustworthiness_and_effectiveness",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 277,
+      "alternative_gold_verified": [],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q06",
+      "split": "dev",
+      "type": "direct",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 23,
+      "gold_section": "part_1_trustworthiness_and_effectiveness",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 236,
+      "alternative_gold_verified": [],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q07",
+      "split": "dev",
+      "type": "conditional_exception",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 34,
+      "gold_section": "part_2_core_and_profiles",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 165,
+      "alternative_gold_verified": [
+        {
+          "source_id": "nist-ai-rmf-1.0",
+          "page": 33,
+          "verified": true
+        },
+        {
+          "source_id": "nist-ai-rmf-1.0",
+          "page": 41,
+          "verified": true
+        }
+      ],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q08",
+      "split": "dev",
+      "type": "direct",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 8,
+      "gold_section": "overview_and_core_intro",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 138,
+      "alternative_gold_verified": [
+        {
+          "source_id": "nist-csf-2.0",
+          "page": 9,
+          "verified": true
+        },
+        {
+          "source_id": "nist-csf-2.0",
+          "page": 31,
+          "verified": true
+        }
+      ],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q09",
+      "split": "dev",
+      "type": "paraphrase",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 12,
+      "gold_section": "profiles_tiers_and_integration",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 228,
+      "alternative_gold_verified": [
+        {
+          "source_id": "nist-csf-2.0",
+          "page": 31,
+          "verified": true
+        }
+      ],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q10",
+      "split": "dev",
+      "type": "direct",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 14,
+      "gold_section": "profiles_tiers_and_integration",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 142,
+      "alternative_gold_verified": [
+        {
+          "source_id": "nist-csf-2.0",
+          "page": 6,
+          "verified": true
+        }
+      ],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q11",
+      "split": "dev",
+      "type": "conditional_exception",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 20,
+      "gold_section": "appendix_a_csf_core",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 298,
+      "alternative_gold_verified": [],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q12",
+      "split": "dev",
+      "type": "metadata_filter",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 29,
+      "gold_section": "part_2_core_and_profiles",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 153,
+      "alternative_gold_verified": [],
+      "has_filter": true,
+      "filter": {
+        "domain": "ai_risk",
+        "year": 2023
+      },
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q13",
+      "split": "dev",
+      "type": "metadata_filter",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 23,
+      "gold_section": "appendix_a_csf_core",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 210,
+      "alternative_gold_verified": [],
+      "has_filter": true,
+      "filter": {
+        "domain": "cybersecurity",
+        "year": 2024
+      },
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q14",
+      "split": "dev",
+      "type": "metadata_filter",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 38,
+      "gold_section": "part_2_core_and_profiles",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 227,
+      "alternative_gold_verified": [],
+      "has_filter": true,
+      "filter": {
+        "domain": "ai_risk",
+        "section": "part_2_core_and_profiles"
+      },
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q15",
+      "split": "dev",
+      "type": "metadata_filter",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 25,
+      "gold_section": "appendix_a_csf_core",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 197,
+      "alternative_gold_verified": [],
+      "has_filter": true,
+      "filter": {
+        "domain": "cybersecurity",
+        "section": "appendix_a_csf_core"
+      },
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q16",
+      "split": "test",
+      "type": "conditional_exception",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 20,
+      "gold_section": "part_1_trustworthiness_and_effectiveness",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 219,
+      "alternative_gold_verified": [],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q17",
+      "split": "test",
+      "type": "direct",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 30,
+      "gold_section": "part_2_core_and_profiles",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 215,
+      "alternative_gold_verified": [],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q18",
+      "split": "test",
+      "type": "paraphrase",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 44,
+      "gold_section": "appendices",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 60,
+      "alternative_gold_verified": [
+        {
+          "source_id": "nist-ai-rmf-1.0",
+          "page": 43,
+          "verified": true
+        }
+      ],
+      "has_filter": false,
+      "filter": null,
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q19",
+      "split": "test",
+      "type": "metadata_filter",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 28,
+      "gold_section": "part_2_core_and_profiles",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 196,
+      "alternative_gold_verified": [],
+      "has_filter": true,
+      "filter": {
+        "domain": "ai_risk",
+        "year": 2023
+      },
+      "filter_verified_against_source": true
+    },
+    {
+      "id": "q20",
+      "split": "test",
+      "type": "metadata_filter",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 28,
+      "gold_section": "appendix_a_csf_core",
+      "primary_evidence_verified": true,
+      "evidence_char_length": 111,
+      "alternative_gold_verified": [],
+      "has_filter": true,
+      "filter": {
+        "domain": "cybersecurity",
+        "year": 2024
+      },
+      "filter_verified_against_source": true
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "benchmark_name": "NIST AI RMF 1.0 & CSF 2.0 Retrieval Benchmark",
+  "version": "1.0",
+  "created_at": "2026-11-13T16:40:00+07:00",
+  "split_summary": {
+    "total_questions": 20,
+    "dev_count": 15,
+    "test_count": 5,
+    "filtered_questions_total": 6,
+    "filtered_questions_dev": 4,
+    "filtered_questions_test": 2
+  },
+  "selection_criteria_locked_before_test": {
+    "primary_metric": "Dev Evidence Hit@3 (higher is better)",
+    "tie_breaker_1": "Dev Hit@1 (higher is better)",
+    "tie_breaker_2": "Manual Chunk Coherence score /2 on 10 pre-selected source positions and Filter Compliance rate on filtered queries",
+    "tie_breaker_3": "Ingestion cost & latency / chunk count efficiency",
+    "holdout_policy": "Strategy parameters and final strategy choice are locked using Dev split (15 questions) and manual coherence/metadata checks before evaluating the 5 holdout Test questions."
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "split": "dev",
+      "type": "direct",
+      "question": "How does the NIST AI RMF define an AI system, and how are its levels of autonomy described?",
+      "expected_answer": "An AI system is defined as an engineered or machine-based system that can, for a given set of objectives, generate outputs such as predictions, recommendations, or decisions influencing real or virtual environments, and is designed to operate with varying levels of autonomy.",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 6,
+      "evidence_quote": "The AI RMF refers to an AI system as an engineered or machine-based system that can, for a given set of objectives, generate outputs such as predictions, recommendations, or decisions influencing real or virtual environments. AI systems are designed to operate with varying levels of autonomy",
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q02",
+      "split": "dev",
+      "type": "direct",
+      "question": "What are the seven characteristics of trustworthy AI systems articulated in the NIST AI Risk Management Framework?",
+      "expected_answer": "The seven characteristics of trustworthy AI systems are: (1) valid and reliable, (2) safe, (3) secure and resilient, (4) accountable and transparent, (5) explainable and interpretable, (6) privacy-enhanced, and (7) fair with harmful bias managed.",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 17,
+      "evidence_quote": "Characteristics of trustworthy AI systems include: valid and reliable, safe, secure and resilient, accountable and transparent, explainable and interpretable, privacy-enhanced, and fair with harmful bias managed.",
+      "alternative_gold": [
+        {
+          "gold_source_id": "nist-ai-rmf-1.0",
+          "gold_page": 8,
+          "evidence_quote": "valid and reliable, safe, secure and resilient, accountable and transparent, explainable and interpretable, privacy enhanced, and fair with their harmful biases managed."
+        }
+      ],
+      "filter": null
+    },
+    {
+      "id": "q03",
+      "split": "dev",
+      "type": "paraphrase",
+      "question": "What three factors can cause an AI system to be inscrutable and complicate risk measurement?",
+      "expected_answer": "Inscrutability can stem from (1) the opaque nature of AI systems (limited explainability or interpretability), (2) a lack of transparency or documentation in AI system development or deployment, or (3) inherent uncertainties in AI systems.",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 11,
+      "evidence_quote": "Inscrutability can be a result of the opaque nature of AI systems (limited explainability or interpretability), lack of transparency or documentation in AI system development or deployment, or inherent uncertainties in AI systems.",
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q04",
+      "split": "dev",
+      "type": "conditional_exception",
+      "question": "Under what conditions does the NIST AI RMF state that AI system development and deployment should cease in a safe manner?",
+      "expected_answer": "Development and deployment should cease in a safe manner when an AI system presents unacceptable negative risk levels—specifically where significant negative impacts are imminent, severe harms are actually occurring, or catastrophic risks are present—until the risks can be sufficiently managed.",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 13,
+      "evidence_quote": "In cases where an AI system presents unacceptable negative risk levels – such as where significant negative impacts are imminent, severe harms are actually occurring, or catastrophic risks are present – development and deployment should cease in a safe manner until risks can be sufficiently managed.",
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q05",
+      "split": "dev",
+      "type": "paraphrase",
+      "question": "How does the AI RMF distinguish between the questions answered by transparency, explainability, and interpretability?",
+      "expected_answer": "Transparency answers 'what happened' in the system, explainability answers 'how' a decision was made in the system, and interpretability answers 'why' a decision was made by the system and its meaning or context to the user.",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 22,
+      "evidence_quote": "Transparency can answer the question of “what happened” in the system. Explainability can answer the question of “how” a decision was made in the system. Interpretability can answer the question of “why” a decision was made by the system and its meaning or context to the user.",
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q06",
+      "split": "dev",
+      "type": "direct",
+      "question": "What are the three major categories of AI bias identified by NIST, and can they occur without discriminatory intent?",
+      "expected_answer": "The three major categories of AI bias are systemic, computational and statistical, and human-cognitive bias. Each of these can occur in the absence of prejudice, partiality, or discriminatory intent.",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 23,
+      "evidence_quote": "NIST has identified three major categories of AI bias to be considered and managed: systemic, computational and statistical, and human-cognitive. Each of these can occur in the absence of prejudice, partiality, or discriminatory intent.",
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q07",
+      "split": "dev",
+      "type": "conditional_exception",
+      "question": "Why should assessors conducting AI verification and validation (TEVV) ideally be separate from front-line developers or test teams, and how does MEASURE 1.3 address this?",
+      "expected_answer": "Ideally, AI actors carrying out verification and validation tasks are distinct from those performing test and evaluation, and MEASURE 1.3 specifies involving internal experts who did not serve as front-line developers and/or independent assessors in regular assessments to improve testing effectiveness and mitigate internal biases and conflicts of interest.",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 34,
+      "evidence_quote": "MEASURE 1.3: Internal experts who did not serve as front-line developers for the system and/or independent assessors are involved in regular assessments and updates.",
+      "alternative_gold": [
+        {
+          "gold_source_id": "nist-ai-rmf-1.0",
+          "gold_page": 33,
+          "evidence_quote": "Processes for independent review can improve the effectiveness of testing and can mitigate internal biases and potential conflicts of interest."
+        },
+        {
+          "gold_source_id": "nist-ai-rmf-1.0",
+          "gold_page": 41,
+          "evidence_quote": "and validation tasks are distinct from those who perform test and evaluation actions."
+        }
+      ],
+      "filter": null
+    },
+    {
+      "id": "q08",
+      "split": "dev",
+      "type": "direct",
+      "question": "What are the six Core Functions of the NIST Cybersecurity Framework (CSF) 2.0, and which Function is at the center of the wheel?",
+      "expected_answer": "The six CSF 2.0 Core Functions are GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER. GOVERN is at the center of the wheel because it informs how an organization implements the other five Functions.",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 8,
+      "evidence_quote": "The CSF Core Functions — GOVERN, IDENTIFY, PROTECT, DETECT, RESPOND, and RECOVER — organize cybersecurity outcomes at their highest level.",
+      "alternative_gold": [
+        {
+          "gold_source_id": "nist-csf-2.0",
+          "gold_page": 9,
+          "evidence_quote": "GOVERN is in the center of the wheel because it informs how an organization will implement the other five Functions."
+        },
+        {
+          "gold_source_id": "nist-csf-2.0",
+          "gold_page": 31,
+          "evidence_quote": "There are six CSF Functions: Govern, Identify, Protect, Detect, Respond, and Recover."
+        }
+      ],
+      "filter": null
+    },
+    {
+      "id": "q09",
+      "split": "dev",
+      "type": "paraphrase",
+      "question": "What are the four CSF Tiers that characterize the rigor of an organization's cybersecurity risk governance and management practices?",
+      "expected_answer": "The four CSF Tiers are Tier 1: Partial, Tier 2: Risk Informed, Tier 3: Repeatable, and Tier 4: Adaptive, describing a progression from informal, ad hoc responses to agile, risk-informed, and continuously improving approaches.",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 12,
+      "evidence_quote": "The Tiers, as shown in Fig. 4 and notionally illustrated in Appendix B, reflect an organization’s practices for managing cybersecurity risk as Partial (Tier 1), Risk Informed (Tier 2), Repeatable (Tier 3), and Adaptive (Tier 4).",
+      "alternative_gold": [
+        {
+          "gold_source_id": "nist-csf-2.0",
+          "gold_page": 31,
+          "evidence_quote": "There are four Tiers: Partial (Tier 1), Risk Informed (Tier 2), Repeatable (Tier 3), and Adaptive (Tier 4)."
+        }
+      ],
+      "filter": null
+    },
+    {
+      "id": "q10",
+      "split": "dev",
+      "type": "direct",
+      "question": "What are the three types of online resources that supplement the NIST CSF 2.0, and what is the purpose of Quick-Start Guides (QSGs)?",
+      "expected_answer": "The three types of online supplementary resources are Informative References, Implementation Examples, and Quick-Start Guides (QSGs). QSGs are brief documents on specific CSF-related topics tailored to specific audiences that distill portions of the CSF into actionable 'first steps'.",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 14,
+      "evidence_quote": "This section provides an overview of three types of online resources: Informative References, Implementation Examples, and Quick Start Guides.",
+      "alternative_gold": [
+        {
+          "gold_source_id": "nist-csf-2.0",
+          "gold_page": 6,
+          "evidence_quote": "Quick-Start Guides that give actionable guidance on using the CSF and its online resources, including transitioning from previous CSF versions to version 2.0"
+        }
+      ],
+      "filter": null
+    },
+    {
+      "id": "q11",
+      "split": "dev",
+      "type": "conditional_exception",
+      "question": "Why is the order of Functions, Categories, and Subcategories in Appendix A of the NIST CSF 2.0 Core not alphabetical, and why are there intentional gaps in Subcategory numbering?",
+      "expected_answer": "The order in the CSF Core is not alphabetical because it is intended to resonate most with those charged with operationalizing risk management within an organization, and the numbering of Subcategories is intentionally not sequential because gaps indicate CSF 1.1 Subcategories that were relocated in CSF 2.0.",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 20,
+      "evidence_quote": "The order of Functions, Categories, and Subcategories of the Core is not alphabetical; it is intended to resonate most with those charged with operationalizing risk management within an organization. The numbering of the Subcategories is intentionally not sequential; gaps in numbering indicate CSF",
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q12",
+      "split": "dev",
+      "type": "metadata_filter",
+      "question": "Within the AI risk management domain (2023 framework), what contingency and third-party governance requirements are specified under GOVERN 6?",
+      "expected_answer": "Under GOVERN 6 in the AI RMF (2023), policies and procedures must address AI risks and benefits arising from third-party software and data and supply chain issues, including risks of infringing third-party intellectual property (GOVERN 6.1) and contingency processes to handle failures or incidents in high-risk third-party data or AI systems (GOVERN 6.2).",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 29,
+      "evidence_quote": "GOVERN 6: Policies and procedures are in place to address AI risks and benefits arising from third-party software and data and other supply chain issues.",
+      "alternative_gold": [],
+      "filter": {
+        "domain": "ai_risk",
+        "year": 2023
+      }
+    },
+    {
+      "id": "q13",
+      "split": "dev",
+      "type": "metadata_filter",
+      "question": "Within the cybersecurity domain (2024 framework), what specific supply chain risk management outcomes are required for contracts and post-partnership activities under GV.SC?",
+      "expected_answer": "In the 2024 CSF 2.0 (cybersecurity domain), GV.SC-05 requires cybersecurity supply chain risk requirements to be integrated into contracts and agreements with suppliers, and GV.SC-10 requires supply chain risk management plans to include provisions for activities occurring after the conclusion of a partnership or service agreement.",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 23,
+      "evidence_quote": "o GV.SC-05: Requirements to address cybersecurity risks in supply chains are established, prioritized, and integrated into contracts and other types of agreements with suppliers and other relevant third parties",
+      "alternative_gold": [],
+      "filter": {
+        "domain": "cybersecurity",
+        "year": 2024
+      }
+    },
+    {
+      "id": "q14",
+      "split": "dev",
+      "type": "metadata_filter",
+      "question": "In the AI RMF Core section, how are Current Profiles and Target Profiles defined for temporal AI risk management?",
+      "expected_answer": "In the AI RMF Core and Profiles section, temporal profiles describe either the current state or desired target state of AI risk management activities: a Current Profile indicates how AI is currently being managed and its current outcomes, while a Target Profile indicates the outcomes needed to achieve the desired AI risk management goals.",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 38,
+      "evidence_quote": "An AI RMF Current Profile indicates how AI is currently being managed and the related risks in terms of current outcomes. A Target Profile indicates the outcomes needed to achieve the desired or target AI risk management goals.",
+      "alternative_gold": [],
+      "filter": {
+        "domain": "ai_risk",
+        "section": "part_2_core_and_profiles"
+      }
+    },
+    {
+      "id": "q15",
+      "split": "dev",
+      "type": "metadata_filter",
+      "question": "In the CSF 2.0 Core appendix, what principles must access permissions and authorizations incorporate under PR.AA-05?",
+      "expected_answer": "Under PR.AA-05 in Appendix A of CSF 2.0, access permissions, entitlements, and authorizations must be defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties.",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 25,
+      "evidence_quote": "o PR.AA-05: Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties",
+      "alternative_gold": [],
+      "filter": {
+        "domain": "cybersecurity",
+        "section": "appendix_a_csf_core"
+      }
+    },
+    {
+      "id": "q16",
+      "split": "test",
+      "type": "conditional_exception",
+      "question": "How does the NIST AI RMF distinguish between resilience and security for AI systems, and how must a resilient system behave when degradation is necessary?",
+      "expected_answer": "An AI system is resilient if it can withstand unexpected adverse events or changes in its environment or use, maintain its functions and structure, degrade safely and gracefully when necessary, and return to normal function after an unexpected adverse event. Security includes resilience but also encompasses protocols to avoid, protect against, respond to, or recover from attacks (such as adversarial examples, data poisoning, and model or training data exfiltration).",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 20,
+      "evidence_quote": "While resilience is the ability to return to normal function after an unexpected adverse event, security includes resilience but also encompasses protocols to avoid, protect against, respond to, or recover from attacks.",
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q17",
+      "split": "test",
+      "type": "direct",
+      "question": "What outcome is required after completing the MAP function in the AI RMF before proceeding to MEASURE and MANAGE?",
+      "expected_answer": "After completing the MAP function, Framework users should have sufficient contextual knowledge about AI system impacts to inform an initial go/no-go decision about whether to design, develop, or deploy an AI system.",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 30,
+      "evidence_quote": "After completing the MAP function, Framework users should have sufficient contextual knowledge about AI system impacts to inform an initial go/no-go decision about whether to design, develop, or deploy an AI system.",
+      "alternative_gold": [],
+      "filter": null
+    },
+    {
+      "id": "q18",
+      "split": "test",
+      "type": "paraphrase",
+      "question": "In Appendix B of the AI RMF, what specific AI risks are highlighted as not being comprehensively addressed by existing traditional software frameworks and guidance?",
+      "expected_answer": "Existing frameworks and guidance prior to the AI RMF are unable to: (1) adequately manage harmful bias in AI systems, (2) confront risks related to generative AI, (3) comprehensively address ML security attacks (evasion, model extraction, membership inference, availability), (4) account for the complex AI attack surface, and (5) consider risks from third-party AI technologies, transfer learning, and off-label fine-tuning.",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 44,
+      "evidence_quote": "adequately manage the problem of harmful bias in AI systems;",
+      "alternative_gold": [
+        {
+          "gold_source_id": "nist-ai-rmf-1.0",
+          "gold_page": 43,
+          "evidence_quote": "AI systems may require more frequent maintenance and triggers for conducting corrective maintenance due to data, model, or concept drift."
+        }
+      ],
+      "filter": null
+    },
+    {
+      "id": "q19",
+      "split": "test",
+      "type": "metadata_filter",
+      "question": "For AI governance (2023 framework), what processes are required under GOVERN 1.6 and GOVERN 1.7 regarding AI system inventories and decommissioning?",
+      "expected_answer": "In the 2023 AI RMF, GOVERN 1.6 requires mechanisms to inventory AI systems resourced according to organizational risk priorities, and GOVERN 1.7 requires processes and procedures for decommissioning and phasing out AI systems safely without increasing risks or decreasing organizational trustworthiness.",
+      "gold_source_id": "nist-ai-rmf-1.0",
+      "gold_page": 28,
+      "evidence_quote": "GOVERN 1.7: Processes and procedures are in place for decommissioning and phasing out AI systems safely and in a manner that does not increase risks or decrease the organization’s trustworthiness.",
+      "alternative_gold": [],
+      "filter": {
+        "domain": "ai_risk",
+        "year": 2023
+      }
+    },
+    {
+      "id": "q20",
+      "split": "test",
+      "type": "metadata_filter",
+      "question": "For cybersecurity incident recovery (2024 framework, Appendix A Core), what verification must occur before using backups and restoration assets under RC.RP-03?",
+      "expected_answer": "Under RC.RP-03 in Appendix A of the 2024 NIST CSF 2.0, the integrity of backups and other restoration assets must be verified before using them for restoration.",
+      "gold_source_id": "nist-csf-2.0",
+      "gold_page": 28,
+      "evidence_quote": "o RC.RP-03: The integrity of backups and other restoration assets is verified before using them for restoration",
+      "alternative_gold": [],
+      "filter": {
+        "domain": "cybersecurity",
+        "year": 2024
+      }
+    }
+  ]
+}
